@@ -4,7 +4,10 @@
 
 require 'config.php';
 
-set_include_path(LIB_PATH);
+set_include_path(
+        LIB_PATH . PATH_SEPARATOR .
+        APP_PATH . DS . 'src'
+);
 
 function classLoader($classname){
     require str_replace('\\',DS, $classname).'.php';
